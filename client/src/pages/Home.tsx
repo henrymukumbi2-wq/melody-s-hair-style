@@ -23,7 +23,7 @@ export default function Home() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden pt-20">
         <div className="embla absolute inset-0" ref={emblaRef}>
           <div className="flex h-full">
             {[heroImg1, heroImg2].map((img, index) => (
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center text-center z-10 px-4">
+        <div className="absolute inset-0 flex items-center justify-center text-center z-10 px-4 pt-20">
           <div className="max-w-4xl space-y-6 animate-in fade-in slide-in-from-bottom-10 duration-1000">
             <span className="font-handwriting text-4xl md:text-5xl text-primary-foreground drop-shadow-lg">
               Welcome to
