@@ -1,0 +1,38 @@
+name: Build and Deploy to Railway
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload dist/public artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-public
+          path: dist/public
+
+      - name: Deploy to Railway
+        if: ${{ secrets.RAILWAY_API_KEY && secrets.RAILWAY_PROJECT_ID }}
+        uses: railwayapp/railway-action@v1
+        with:
+          apiKey: ${{ secrets.RAILWAY_API_KEY }}
+          projectId: ${{ secrets.RAILWAY_PROJECT_ID }}
+          # deployPath tells the action what to deploy; adjust if needed
+          deployPath: dist/public
