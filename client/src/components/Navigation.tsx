@@ -10,6 +10,7 @@ const links = [
   { href: "/prices", label: "Services & Prices" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+  { href: "/book", label: "Book Appointment" },
 ];
 
 export function Navigation() {
@@ -50,7 +51,7 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
+            {links.filter(l => l.href !== "/book").map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -68,7 +69,7 @@ export function Navigation() {
                 )} />
               </Link>
             ))}
-            <Link href="/contact">
+            <Link href="/book">
               <Button 
                 variant={scrolled ? "default" : "secondary"}
                 className="font-semibold"
@@ -110,11 +111,6 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <div className="px-4">
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full">Book Appointment</Button>
-              </Link>
-            </div>
           </div>
         </div>
       )}

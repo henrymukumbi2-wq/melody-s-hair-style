@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Scissors } from "lucide-react";
+import { salonContact } from "@shared/schema";
 
 export function Footer() {
   return (
@@ -26,7 +27,7 @@ export function Footer() {
           <div>
             <h3 className="font-display text-xl mb-6 text-primary">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Gallery', 'Contact'].map((item) => (
+              {['Home', 'About Us', 'Services', 'Gallery', 'Contact', 'Book'].map((item) => (
                 <li key={item}>
                   <Link 
                     href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
@@ -43,10 +44,10 @@ export function Footer() {
           <div>
             <h3 className="font-display text-xl mb-6 text-primary">Services</h3>
             <ul className="space-y-3 text-white/70">
-              <li>Bridal Styling</li>
+              <li>Braiding</li>
               <li>Hair Coloring</li>
               <li>Precision Cuts</li>
-              <li>Extensions</li>
+              <li>Wig Installation</li>
               <li>Treatments</li>
             </ul>
           </div>
@@ -57,15 +58,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="h-5 w-5 mt-1 shrink-0 text-primary" />
-                <span>123 Fashion Street,<br />Stylish District, NY 10001</span>
+                <span>Available Online &<br />By Appointment</span>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>{salonContact.phone}</span>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
-                <span>hello@melody-style.com</span>
+                <span className="break-all">{salonContact.email}</span>
               </li>
             </ul>
           </div>

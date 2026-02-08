@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { insertMessageSchema, type InsertMessage } from "@shared/schema";
+import { insertMessageSchema, type InsertMessage, salonContact } from "@shared/schema";
 import { useCreateMessage } from "@/hooks/use-messages";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -51,19 +51,19 @@ export default function Contact() {
             <div className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
               <MapPin className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-bold text-xl mb-2">Visit Us</h3>
-              <p className="text-muted-foreground">123 Fashion Street<br/>Stylish District, NY 10001</p>
+              <p className="text-muted-foreground text-sm">Online Appointments &<br/>Local Mobile Services</p>
             </div>
             
             <div className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
               <Phone className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-bold text-xl mb-2">Call Us</h3>
-              <p className="text-muted-foreground">+1 (555) 123-4567<br/>Mon-Sat, 9am - 6pm</p>
+              <p className="text-muted-foreground">{salonContact.phone}<br/>Mon-Sat, 8am - 6pm</p>
             </div>
             
             <div className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
               <Mail className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-bold text-xl mb-2">Email Us</h3>
-              <p className="text-muted-foreground">hello@melody-style.com<br/>bookings@melody-style.com</p>
+              <p className="text-muted-foreground break-all">{salonContact.email}</p>
             </div>
           </div>
 
@@ -135,17 +135,6 @@ export default function Contact() {
                 </Button>
               </form>
             </Form>
-          </div>
-        </div>
-        
-        {/* Map Placeholder */}
-        <div className="mt-12 h-96 bg-secondary/30 rounded-3xl overflow-hidden relative">
-          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground bg-gray-100">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 mx-auto mb-2 text-gray-400" />
-              <p>Map Integration Placeholder</p>
-              <p className="text-sm">(Google Maps API would go here)</p>
-            </div>
           </div>
         </div>
       </section>
