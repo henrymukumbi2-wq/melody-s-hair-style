@@ -53,7 +53,7 @@ export default function Home() {
                   View Our Services
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/book">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full bg-transparent text-white border-2 border-white hover:bg-white hover:text-foreground backdrop-blur-sm shadow-lg transition-all">
                   Book Appointment
                 </Button>
@@ -183,7 +183,7 @@ export default function Home() {
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
             Book your appointment today and let our expert stylists work their magic.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <Button size="lg" className="bg-white text-foreground hover:bg-white/90 text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
               Book Your Appointment Now
             </Button>
