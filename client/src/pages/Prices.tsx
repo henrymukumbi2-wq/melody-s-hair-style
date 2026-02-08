@@ -81,7 +81,7 @@ export default function Prices() {
             We offer complimentary 15-minute consultations to discuss your hair goals and recommend the perfect service for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/book">
               <Button size="lg" className="rounded-full">Book Consultation</Button>
             </Link>
             <Link href="/gallery">
